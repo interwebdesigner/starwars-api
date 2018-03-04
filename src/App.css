@@ -1,0 +1,12 @@
+@font-face {
+font-family: 'STARWARS LOGO FONT';
+font-style: normal;
+font-weight: normal;
+src: local('STARWARS LOGO FONT'), url('STARWARS.woff') format('woff');
+}
+
+h1, h2 {
+	font-family: 'STARWARS LOGO FONT';
+	font-weight: 200;
+	color: #FFD700;
+}

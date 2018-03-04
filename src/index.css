@@ -1,0 +1,30 @@
+@font-face {
+font-family: 'STARWARS LOGO FONT';
+font-style: normal;
+font-weight: normal;
+src: local('STARWARS LOGO FONT'), url('STARWARS.woff') format('woff');
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url("space.jpg");
+    padding: 0;
+    font-family: STARWARS LOGO FONT;
+
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul {
+    font-family: sans-serif;
+    text-align: left;
+    padding-left: 5px;
+}
+
+
