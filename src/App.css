@@ -10,3 +10,7 @@ h1, h2 {
 	font-weight: 200;
 	color: #FFD700;
 }
+
+.card {
+	min-width: 300px;
+}
