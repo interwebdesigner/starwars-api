@@ -4,6 +4,14 @@ import SearchBox from './SearchBox';
 import Scroll from './Scroll';
 import './App.css';
 
+// const urls = [
+// 		'https://swapi.co/api/people/?page=1',
+// 		'https://swapi.co/api/people/?page=2',
+// 		'https://swapi.co/api/people/?page=3',
+// 		'https://swapi.co/api/people/?page=4',
+// 		'https://swapi.co/api/people/?page=5'
+// 	]
+
 class App extends Component {
 	constructor() {
 		super()
@@ -14,16 +22,26 @@ class App extends Component {
 	}
 
 	async componentDidMount() {
-	  const resp = await fetch('https://swapi.co/api/people/')
-	  const data = await resp.json();
-	  const results = await this.setState({actors: data.results});
-	  // console.log(data.results);
+		let allData = [];
+		let currentPage = 1;
+		let i = 0;
+
+		while(currentPage < 9) {
+			currentPage++;
+			const response = await fetch(`https://swapi.co/api/people/?page=${currentPage}`)
+			const data = await response.json();
+			for (i = 0; i < data.results.length; i++) {
+				allData.push(data.results[i]);
+			}
+		}
+		await this.setState({actors: allData});
 	}
 
-	// componentDidMount() {
-	// 	fetch('https://swapi.co/api/people/')
-	// 		.then(response => response.json())
-	// 		.then(users => this.setState({robots: users}));
+
+	// async componentDidMount() {
+	//   const resp = await fetch('https://swapi.co/api/people/?page=1')
+	//   const data = await resp.json();
+	//   const results = await this.setState({actors: data.results});
 	// }
 
 	onSearchChange = (event) => {
