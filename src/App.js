@@ -16,7 +16,7 @@ class App extends Component {
 
 	async componentDidMount() {
 		let allData = [];
-		let currentPage = 1;
+		let currentPage = 0;
 		let i = 0;
 
 		while(currentPage < 9) {
