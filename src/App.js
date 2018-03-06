@@ -4,13 +4,6 @@ import SearchBox from './SearchBox';
 import Scroll from './Scroll';
 import './App.css';
 
-// const urls = [
-// 		'https://swapi.co/api/people/?page=1',
-// 		'https://swapi.co/api/people/?page=2',
-// 		'https://swapi.co/api/people/?page=3',
-// 		'https://swapi.co/api/people/?page=4',
-// 		'https://swapi.co/api/people/?page=5'
-// 	]
 
 class App extends Component {
 	constructor() {
@@ -36,13 +29,6 @@ class App extends Component {
 		}
 		await this.setState({actors: allData});
 	}
-
-
-	// async componentDidMount() {
-	//   const resp = await fetch('https://swapi.co/api/people/?page=1')
-	//   const data = await resp.json();
-	//   const results = await this.setState({actors: data.results});
-	// }
 
 	onSearchChange = (event) => {
 		this.setState({searchfield: event.target.value})
